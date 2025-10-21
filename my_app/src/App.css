@@ -1,0 +1,121 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* 2번 문제 css */
+#root .welecome{
+  color: dodgerblue;
+}
+
+/* test13 */
+#root .box{
+  width: 200px;
+  height: 200px;
+  background-color: lightgrey;
+  transition: all 0.3s;
+}
+#root .box.active{
+  background-color: coral;
+  transform: scale(1.1);
+}
+
+/* Ex02 */
+#root .profile p{
+  color: dodgerblue;
+}
+
+/* Ex03 */
+.header{
+ position: fixed; /* 상단 고정 */
+ top: 0;
+ left: 0;
+ width: 100%;
+ padding: 20px; /* 여백 추가 */
+ background-color: skyblue;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 */
+ }
+ .main{
+ margin: 200px auto;
+ }
+ .footer{
+ position: fixed; /* 하단 고정 */
+ left: 0;
+ bottom: 0;
+ width: 100%;
+ padding: 10px;
+ background-color: lightgray;
+ text-align: center
+ }
+
+ /* Ex08 */
+ #root .menu{
+  width: 250px;
+  height: 150px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 10px;
+ }
+ #root .menu_info{
+  color: #777;
+ }
+ #root .menu_price{
+  font-size: 20px;
+  color: red;
+ }
+
+ /* Ex10 */
+ #root .nav-list{ 
+  display: flex;
+  list-style: none;
+  background-color: rgb(32, 44, 100);
+  padding: 0;
+}
+#root .nav-list li{ 
+  font-size: 20px;
+  padding: 30px 40px;
+  margin: 0 10px;
+}
+#root .nav-list li a{
+  color: white;
+}
