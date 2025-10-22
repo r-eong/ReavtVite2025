@@ -46,6 +46,44 @@ import Counter02 from './propsComponents/stateCount02';
 
 import Props06 from './propsComponents/Props06';
 
+import Exstate01 from './stateComponents/Ex01';
+
+import Exstate02 from './stateComponents/Ex02';
+
+import Exstate03 from './stateComponents/Ex03';
+
+import Exstate04 from './stateComponents/Ex04';
+
+import Exstate05 from './stateComponents/Ex05';
+
+import Exstate06 from './stateComponents/Ex06';
+
+import Exstate07 from './stateComponents/Ex07';
+
+import Exstate08 from './stateComponents/Ex08';
+
+import Exstate09 from './stateComponents/Ex09';
+
+import Exstate10 from './stateComponents/Ex10';
+
+import Exstate11 from './stateComponents/Ex11';
+
+import Test from './stateComponents/test';
+
+import Exstate13 from './stateComponents/Ex13';
+
+import Exstate14 from './stateComponents/Ex14';
+
+import Exstate15 from './stateComponents/Ex15';
+
+import Exstate16 from './stateComponents/Ex16';
+
+import Exstate17 from './stateComponents/Ex17';
+
+import Exstate18 from './stateComponents/Ex18';
+
+import Blog from './stateComponents/Blog';
+
 
 // 문제10
 // UserCard() 함수 생성하기
@@ -228,11 +266,30 @@ function App() {
     {/* <Counter01 /> */}
     {/* <Counter02 /> */}
 
-    <Props06 now='error' messages= '오류 발생!'/>
+    {/* <Props06 now='error' messages= '오류 발생!'/>
     <Props06 now='success' messages= '성공!'/>
     <Props06 now='none01' messages= '알림'/>
-    <Props06 now='none02' messages= '경고'/>
+    <Props06 now='none02' messages= '경고'/> */}
 
+    {/* <Exstate01 /> */}
+    {/* <Exstate02 /> */}
+    {/* <Exstate03 /> */}
+    {/* <Exstate04 /> */}
+    {/* <Exstate05 /> */}
+    {/* <Exstate06 /> */}
+    {/* <Exstate07 /> */}
+    {/* <Exstate08 /> */}
+    {/* <Exstate09 /> */}
+    {/* <Exstate10 /> */}
+    {/* <Exstate11 /> */}
+    {/* <Test /> */}
+    {/* <Exstate13 /> */}
+    {/* <Exstate14 /> */}
+    {/* <Exstate15 /> */}
+    {/* <Exstate16 /> */}
+    {/* <Exstate17 /> */}
+    {/* <Exstate18 /> */}
+    <Blog />
     </>
   )
 }
