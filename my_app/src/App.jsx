@@ -83,6 +83,9 @@ import Exstate17 from './stateComponents/Ex17';
 import Exstate18 from './stateComponents/Ex18';
 
 import Blog from './stateComponents/Blog';
+import MovieReview from './stateComponents/MovieReview';
+import ShoppingList from './stateComponents/ShoppingList';
+import CommentBoard from './stateComponents/CommentBoard';
 
 
 // 문제10
@@ -289,7 +292,11 @@ function App() {
     {/* <Exstate16 /> */}
     {/* <Exstate17 /> */}
     {/* <Exstate18 /> */}
-    <Blog />
+
+    {/* <Blog /> */}
+    {/* <MovieReview /> */}
+    {/* <ShoppingList /> */}
+    <CommentBoard />
     </>
   )
 }

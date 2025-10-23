@@ -1,0 +1,53 @@
+.container{
+    color: #000000;
+}
+
+.container .main{
+    margin: 10px ;
+    width: 450px;
+}
+.container .main input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    margin: 5px;
+    width: 300px;
+    font-size: 15px;
+}
+.container .main button{
+    background-color: #e78a20;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50px;
+    height: 35px;
+    margin: 5px;
+}
+
+.container .list ul{
+    padding: 0;
+    list-style: none;
+}
+.container .list ul li{
+    width: 450px;
+    height: 20px;
+    background-color: #f3f6f8;
+    border-radius: 10px;
+    color: #000000;
+    margin: 20px auto;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .list ul li button{
+    top: 10px;
+    right: 20px;
+    background-color: transparent;
+    background-color: #f3dec7;
+    border: none;
+    outline: none;
+    padding: 7px 10px;
+    margin: 5px;
+    color: #3d2101;
+}

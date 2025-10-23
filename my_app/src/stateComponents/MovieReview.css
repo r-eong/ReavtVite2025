@@ -1,0 +1,59 @@
+.container{
+    color: #000000;
+}
+
+.container .main{
+    /* margin-top: 10px; */
+    margin: 10px ;
+}
+.container .main input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    margin: 5px;
+}
+.container .main button{
+    background-color: #03884a;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50px;
+    height: 35px;
+    margin: 5px;
+}
+
+.container .info ul{
+    padding: 0;
+}
+.container .info ul li{
+    width: 400px;
+    height: 150px;
+    background-color: #f3f6f8;
+    border-radius: 10px;
+    color: #000000;
+    margin: 20px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.container .info ul li{
+    position: relative;
+}
+.container .info ul li button{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: transparent;
+    color: #333333;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-top: 0;
+}
+
+.container .info ul li span{
+    color: #03884a;
+}
