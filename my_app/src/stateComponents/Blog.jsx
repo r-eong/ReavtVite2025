@@ -3,9 +3,11 @@ import React, {useState} from "react"
 export default function Blog(){
     const [posts, setPosts] = useState(['남자코트 추천', '강남 우동맛집', '파이썬 독학'])
     const [likes, setLikes] = useState([0, 0, 0])
-    // const [modalOpen, setModalOpen] = useState(false)
-    // const [selected, setSelected] = useState(0)
     const [inputValue, setInputValue] = useState('')
+    // 모달 창이 안보이는 상태를 false로 지정
+    const [modalOpen, setModalOpen] = useState(false)
+    // 선택된 글의 인덱스 지정
+    const [selectedIndex, setSelectedIndex] = useState(null)
 
     // 좋아요 배열
     const addText = () =>{
@@ -88,8 +90,8 @@ export default function Blog(){
             {/* 좋아요 배열 */}
             {posts.map((posts, index) =>(
 
-            <li key = {index}>
-                <h3 onClick={() => addLike(index)} style={{cursor: 'pointer'}}>{posts} 👍 {likes[index]}</h3>
+            <li key = {index} style={{border: '1px solid #999', margin: '10px 0', padding: '10px', borderRadius: '10px'}}>
+                <h3 style={{cursor: 'pointer'}} onClick={() => {setModalOpen(true); setSelectedIndex(index);}}><span onClick={() => addLike(index)} >{posts} 👍 {likes[index]}</span></h3>
                 <p>{new Date().toLocaleDateString()} 발행</p>
                 <button onClick={() => delPost()}>삭제</button>
             </li>
@@ -98,6 +100,51 @@ export default function Blog(){
         <div>
             <input onChange={(e) => setInputValue(e.target.value)} value={inputValue} placeholder="글 제목 입력"/>
             <button onClick={addPost}>글발행</button>
+            {/* 자식 모달 데이터 보내기 */}
+            {/* 글 제목, 글 인덱스 번호, 모달 닫기 함수, 스타일 - color */}
+            {modalOpen && <Modal 
+            bor = {'1px solid #333'} 
+            title = {posts} 
+            setposts = {setPosts} 
+            index = {selectedIndex} 
+            onClose = {() => setModalOpen(false)}
+            />}
+        </div>
+        </>
+    )
+}
+
+
+
+
+
+
+// 자식 컴포넌트 - Modal
+function Modal(props){
+    // update 함수 필요
+    // update 조건 - 얕은복사 필요
+    // 1. props.title 를 얕은 복사 
+    // ┖> let titleCopy = [...props.title]
+    // 2. prompt('새 제목입력, @@@)
+    // ┖> titleCopy[props.index] = prompt('새 제목 입력', 'titleCopy[props.index])
+    // 3. titleCopy[props.index] -> titleCopy[0] -> 남자코트 추천
+    // 4. 수정한 글의 제목을 update 해야함
+    // ┖> props.setPosts(titleCopy)
+
+    const update = () => {
+        let titleCopy = [...props.title]
+        titleCopy[props.index] = prompt('새 제목을 입력하세요', titleCopy[props.index]) || titleCopy[props.index]
+        props.setposts(titleCopy)
+    }
+
+    return(
+        <>
+        <div className="modal" style={{border: props.bor, padding: '20px', borderRadius: '10px'}}>
+            <h4 style={{margin: '0'}}>{props.title[props.index]}</h4>
+            <p>날짜 : {new Date().toLocaleDateString()}</p>
+            <p>상세내용 : 여기에 내용을 넣어보세요</p>
+            <button onClick={update} style={{marginRight: '10px', backgroundColor: 'dodgerblue', color: '#fff'}}>글수정</button>
+            <button onClick={props.onClose} style={{backgroundColor: 'tomato', color: '#fff'}}>닫기</button>
         </div>
         </>
     )

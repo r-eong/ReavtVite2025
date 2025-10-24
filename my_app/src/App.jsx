@@ -26,7 +26,7 @@ import Ex11 from './components/Ex11';
 import Ex12 from './components/Ex12';
 import Ex13 from './components/Ex13';
 
-import Parent from './propsComponents/parent';
+// import Parent from './propsComponents/parent';
 
 import Parent02 from './propsComponents/welecom';
 
@@ -85,7 +85,18 @@ import Exstate18 from './stateComponents/Ex18';
 import Blog from './stateComponents/Blog';
 import MovieReview from './stateComponents/MovieReview';
 import ShoppingList from './stateComponents/ShoppingList';
-import CommentBoard from './stateComponents/CommentBoard';
+// import CommentBoard from './stateComponents/CommentBoard';
+
+import ModalChange from './stateUI/uitest01';
+import LoginView from './stateUI/uitest02';
+import PromptChange from './stateUI/uitest03';
+import Parent from './stateUI/uitest04';
+
+import AuthApp from './stateUI/member/AuthApp';
+
+import MovieApp from './stateUI/movie/MovieApp';
+
+
 
 
 // 문제10
@@ -296,7 +307,15 @@ function App() {
     {/* <Blog /> */}
     {/* <MovieReview /> */}
     {/* <ShoppingList /> */}
-    <CommentBoard />
+    {/* <CommentBoard /> */}
+
+    {/* <ModalChange /> */}
+    {/* <LoginView /> */}
+
+    {/* <PromptChange /> */}
+    {/* <Parent /> */}
+    {/* <AuthApp /> */}
+    <MovieApp />
     </>
   )
 }

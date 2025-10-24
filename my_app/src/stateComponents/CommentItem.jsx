@@ -1,10 +1,11 @@
-function CommentItem(comments,
+function CommentItem({
+        comments,
         setComments,
         inputComments,
         setInputComments,
         addComments,
         delComments,
-        addLike){
+        addLike}){
     return(
         <div className='container'>
             {/* 메인 상단 */}

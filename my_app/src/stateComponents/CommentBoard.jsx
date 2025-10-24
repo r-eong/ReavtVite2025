@@ -1,5 +1,5 @@
 import './CommentItem.css'
-import './CommentItem.jsx'
+import CommentItem from '../stateComponents/CommentItem';
 import React, {useState} from "react"
 
 export default function CommentBoard(){
