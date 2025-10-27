@@ -12,89 +12,13 @@ import './App.css'
 // public 폴더의 이미지 파일은 import하지 않아도 사용 가능
 import image01 from '../public/images/image01.png';
 
-import Ex01 from './components/Ex01';
-import Ex02 from './components/Ex02';
-import Ex03 from './components/Ex03';
-import Ex04 from './components/Ex04';
-import Ex05 from './components/Ex05';
-import Ex06 from './components/Ex06';
-import Ex07 from './components/Ex07';
-import Ex08 from './components/Ex08';
-import Ex09 from './components/Ex09';
-import Ex10 from './components/Ex10';
-import Ex11 from './components/Ex11';
-import Ex12 from './components/Ex12';
-import Ex13 from './components/Ex13';
+import NewMovie from './stateUI/NewMovie/MovieApp';
 
-// import Parent from './propsComponents/parent';
+import ShopApp from './stateUI/shop/ShopApp';
 
-import Parent02 from './propsComponents/welecom';
+import FoodApp from './stateUI/food/FoodApp';
 
-import Parent03 from './propsComponents/profile';
 
-import Parent04 from './propsComponents/prEx';
-
-import Welecome from './propsComponents/Props01';
-
-import UserCard02 from './propsComponents/Props02';
-
-import Product from './propsComponents/Props03';
-
-import Counter01 from './propsComponents/stateCount';
-
-import Counter02 from './propsComponents/stateCount02';
-
-import Props06 from './propsComponents/Props06';
-
-import Exstate01 from './stateComponents/Ex01';
-
-import Exstate02 from './stateComponents/Ex02';
-
-import Exstate03 from './stateComponents/Ex03';
-
-import Exstate04 from './stateComponents/Ex04';
-
-import Exstate05 from './stateComponents/Ex05';
-
-import Exstate06 from './stateComponents/Ex06';
-
-import Exstate07 from './stateComponents/Ex07';
-
-import Exstate08 from './stateComponents/Ex08';
-
-import Exstate09 from './stateComponents/Ex09';
-
-import Exstate10 from './stateComponents/Ex10';
-
-import Exstate11 from './stateComponents/Ex11';
-
-import Test from './stateComponents/test';
-
-import Exstate13 from './stateComponents/Ex13';
-
-import Exstate14 from './stateComponents/Ex14';
-
-import Exstate15 from './stateComponents/Ex15';
-
-import Exstate16 from './stateComponents/Ex16';
-
-import Exstate17 from './stateComponents/Ex17';
-
-import Exstate18 from './stateComponents/Ex18';
-
-import Blog from './stateComponents/Blog';
-import MovieReview from './stateComponents/MovieReview';
-import ShoppingList from './stateComponents/ShoppingList';
-// import CommentBoard from './stateComponents/CommentBoard';
-
-import ModalChange from './stateUI/uitest01';
-import LoginView from './stateUI/uitest02';
-import PromptChange from './stateUI/uitest03';
-import Parent from './stateUI/uitest04';
-
-import AuthApp from './stateUI/member/AuthApp';
-
-import MovieApp from './stateUI/movie/MovieApp';
 
 
 
@@ -249,25 +173,6 @@ function App() {
 
     <hr/> */}
 
-    {/* <Ex01 /> */}
-    {/* <Ex02 /> */}
-    {/* <Ex03 /> */}
-    {/* <Ex04 /> */}
-    {/* <Ex05 /> */}
-    {/* <Ex06 /> */}
-    {/* <Ex07 /> */}
-    {/* <Ex08 /> */}
-    {/* <Ex09 />
-    <Ex10 />
-    <Ex11 />
-    <Ex12 />
-    <Ex13 /> */}
-
-    {/* <Parent /> */}
-    {/* <Parent02 /> */}
-    {/* <Parent03 /> */}
-    {/* <Parent04 /> */}
-
     {/* <Welecome name= '개나리'/> */}
 
     {/* <UserCard02 name= '개나리' age= {18} city= '서울' />
@@ -277,45 +182,13 @@ function App() {
     {/* <Product item = '노트북' price= {120000} />
     <Product item = '마우스' price= {15000} /> */}
 
-    {/* <Counter01 /> */}
-    {/* <Counter02 /> */}
 
     {/* <Props06 now='error' messages= '오류 발생!'/>
     <Props06 now='success' messages= '성공!'/>
     <Props06 now='none01' messages= '알림'/>
     <Props06 now='none02' messages= '경고'/> */}
 
-    {/* <Exstate01 /> */}
-    {/* <Exstate02 /> */}
-    {/* <Exstate03 /> */}
-    {/* <Exstate04 /> */}
-    {/* <Exstate05 /> */}
-    {/* <Exstate06 /> */}
-    {/* <Exstate07 /> */}
-    {/* <Exstate08 /> */}
-    {/* <Exstate09 /> */}
-    {/* <Exstate10 /> */}
-    {/* <Exstate11 /> */}
-    {/* <Test /> */}
-    {/* <Exstate13 /> */}
-    {/* <Exstate14 /> */}
-    {/* <Exstate15 /> */}
-    {/* <Exstate16 /> */}
-    {/* <Exstate17 /> */}
-    {/* <Exstate18 /> */}
-
-    {/* <Blog /> */}
-    {/* <MovieReview /> */}
-    {/* <ShoppingList /> */}
-    {/* <CommentBoard /> */}
-
-    {/* <ModalChange /> */}
-    {/* <LoginView /> */}
-
-    {/* <PromptChange /> */}
-    {/* <Parent /> */}
-    {/* <AuthApp /> */}
-    <MovieApp />
+    <FoodApp />
     </>
   )
 }
