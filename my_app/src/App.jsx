@@ -5,18 +5,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
 // import 는 외부 파일을 가져온다.
-import './App.css'
+// import './App.css'
 
 // react 는 이미지를 하나하나 import 해서 개별로 가져올 수 있다
 // ┖> image01 라는 이름은 변수처럼 내 마음대로 지정할 수 있음!
 // public 폴더의 이미지 파일은 import하지 않아도 사용 가능
 import image01 from '../public/images/image01.png';
 
-import NewMovie from './stateUI/NewMovie/MovieApp';
+
+import JellyCatApp from './stateUI/TableOrder/JellyCatApp';
 
 import ShopApp from './stateUI/shop/ShopApp';
 
-import FoodApp from './stateUI/food/FoodApp';
 
 
 
@@ -188,7 +188,8 @@ function App() {
     <Props06 now='none01' messages= '알림'/>
     <Props06 now='none02' messages= '경고'/> */}
 
-    <FoodApp />
+    <JellyCatApp />
+    {/* <ShopApp /> */}
     </>
   )
 }
