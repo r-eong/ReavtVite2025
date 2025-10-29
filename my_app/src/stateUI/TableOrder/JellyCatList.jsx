@@ -1,4 +1,5 @@
 export default function JellyCatList(props){
+    
     return(
         <div className="list">
             <ul>
@@ -7,10 +8,10 @@ export default function JellyCatList(props){
                         <img 
                         src={`/tableImg/${dolls.img}`} 
                         alt={dolls.name}
-                        onClick={props.addCart}
+                        onClick={() => props.addCart(dolls)}
                         ></img>
                         <span>{dolls.name}</span>
-                        <p>{dolls.price}</p>
+                        <p>{(dolls.price).toLocaleString()}</p>
                     </li>
                 ))}
 

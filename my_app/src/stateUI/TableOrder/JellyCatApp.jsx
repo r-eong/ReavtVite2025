@@ -90,19 +90,69 @@ export default function JellyCatApp(){
         console.log(cartCopy)
     }
 
+    // 주문내역 항목 삭제 버튼
+    const delCart = (id) => {
+        let del = [...cart]
+        del.splice(id, 1)
+        setCart(del)
+    }
+
+    // 총 금액
+    // const totalCart = (sum) => {
+    //     let addCopy = [...addCart]
+
+    //     const total = sum.price * sum.quantity
+    // }
+
+    // 수량 감소 버튼
+    const downBtn = (index) => {
+        let cartCopy = [...cart]
+        if(cartCopy[index].quantity <= 1){
+            alert('1개 이상 선택하세요')
+        }else{
+            cartCopy[index].quantity--
+        }
+        setCart(cartCopy)
+    }
+    // 수량 증가 버튼
+    const upBtn = (index) => {
+        let cartCopy = [...cart]
+        if(cartCopy[index].quantity >= 10){
+            alert('10개 이하로 선택하세요')
+        }else{
+            cartCopy[index].quantity++
+            console.log(cartCopy[index].quantity)
+        }
+        console.log(cartCopy)
+        setCart(cartCopy)
+    }
+
+
     return(
         <div className="container">
             <div className="menu">
                 <h1>8</h1>
                 <ul>
-                    <li onClick={() => setCategoryImg(1)}>동물</li>
-                    <li onClick={() => setCategoryImg(2)}>푸드 & 드링크</li>
-                    <li onClick={() => setCategoryImg(3)}>가방 & 백참</li>
-                    <li onClick={() => setCategoryImg(4)}>할로윈</li>
+                    <li 
+                    onClick={() => setCategoryImg(1)} 
+                    style={{backgroundColor: categoryImg === 1 ? '#613bc7' : '#916ff0'}}>
+                        동물</li>
+                    <li 
+                    onClick={() => setCategoryImg(2)} 
+                     style={{backgroundColor: categoryImg === 2 ? '#613bc7' : '#916ff0'}}>
+                        푸드 & 드링크</li>
+                    <li 
+                    onClick={() => setCategoryImg(3)} 
+                     style={{backgroundColor: categoryImg === 3 ? '#613bc7' : '#916ff0'}}>
+                        가방 & 백참</li>
+                    <li 
+                    onClick={() => setCategoryImg(4)} 
+                     style={{backgroundColor: categoryImg === 4 ? '#613bc7' : '#916ff0'}}>
+                        할로윈</li>
                 </ul>
             </div>
-            <button type='button' onClick={() => addCart(true)}>주문내역</button>
-            {showCart === true ? <CartModal cart = {cart} modalOn = {() => setShowCart(false)} /> : null}
+            <button type='button' onClick={() => setShowCart(true)}>주문내역</button>
+            {showCart === true ? <CartModal upBtn = {upBtn} downBtn = {downBtn} delCart = {delCart} cart = {cart} modalOn = {() => setShowCart(false)} /> : null}
             <JellyCatList 
             addCart = {addCart}
             filterImg = {filterImg} 
