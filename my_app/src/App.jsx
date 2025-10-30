@@ -13,8 +13,7 @@ import './App.css'
 import image01 from '../public/images/image01.png';
 
 
-import Eff09 from './Effect/Eff09';
-
+import Ex11 from './Effect/Ex11';
 
 
 
@@ -185,7 +184,7 @@ function App() {
     <Props06 now='none01' messages= '알림'/>
     <Props06 now='none02' messages= '경고'/> */}
 
-    <Eff09 />
+    <Ex11 />
 
     </>
   )
