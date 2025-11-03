@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // src -> assets -> 이미지 파일은 반드시 import 해야한다
 import reactLogo from './assets/react.svg'
@@ -12,9 +12,16 @@ import './App.css'
 // public 폴더의 이미지 파일은 import하지 않아도 사용 가능
 import image01 from '../public/images/image01.png';
 
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Fakestore02 from './Pages/Fake/Fakestore02';
+import FakestoreDetail02 from './Pages/Fake/FakestoreDetail02';
+import useProduct from './Pages/Fake/Data';
 
-// import ProductApp from './JSON/ExJ06/ProductApp';
-import ExJ07 from './JSON/ExJ06/ExJ07';
+import useRecipData from './Pages/Recipes/RecipData';
+import RecipeList from './Pages/Recipes/RecipeList';
+import RecipeDetail from './Pages/Recipes/RecipeDetail';
+
 
 
 
@@ -51,31 +58,36 @@ function UserCard(props){
 // function App(){}
 // ┖> react에서 App()는 컴포넌트라고 부른다
 function App() {
-  // 리액트는 반드시 return() 안에서 실행할 HTML 문서를 작성한다.
-  const name = '홍길동';
+  // // 리액트는 반드시 return() 안에서 실행할 HTML 문서를 작성한다.
+  // const name = '홍길동';
 
-  // 문제5
-  // true, false 는 논리값이다. 문자가 아님.
-  // ┖> true === 1, false === 0 라고 생각하면 됨
-  const isLoggin = true;
+  // // 문제5
+  // // true, false 는 논리값이다. 문자가 아님.
+  // // ┖> true === 1, false === 0 라고 생각하면 됨
+  // const isLoggin = true;
 
-  // 문제6
-  const fruits = ['사과', '오렌지', '바나나'];
+  // // 문제6
+  // const fruits = ['사과', '오렌지', '바나나'];
 
-  // 문제7
-  const user = {name : '김철수', age : 25, email : "kim@naver.com"}
+  // // 문제7
+  // const user = {name : '김철수', age : 25, email : "kim@naver.com"}
 
-  // 문제9
-  const clickSpan = () => {
-    console.log('버튼클릭');
-  }
+  // // 문제9
+  // const clickSpan = () => {
+  //   console.log('버튼클릭');
+  // }
 
-  // 문제11
-  const products = [
-    { id: 1, name: "노트북", price: 1200000 },
-    { id: 2, name: "마우스", price: 30000 },
-    { id: 3, name: "키보드", price: 80000 }
-  ];
+  // // 문제11
+  // const products = [
+  //   { id: 1, name: "노트북", price: 1200000 },
+  //   { id: 2, name: "마우스", price: 30000 },
+  //   { id: 3, name: "키보드", price: 80000 }
+  // ];
+
+  // 내가 만든 useProduct() 커스텀 훅 호출
+  // const data = useProduct();
+
+  const data = useRecipData();
 
   return (
     // <> </> 는 플래그먼트로, 리액트는 HTML 작성시 
@@ -184,8 +196,29 @@ function App() {
     <Props06 now='none01' messages= '알림'/>
     <Props06 now='none02' messages= '경고'/> */}
 
-    <ExJ07 />
+    {/* <BrowserRouter> */}
+      {/* <Routes>
+        <Route path='/' element = {<Home />} />
+        <Route path='/about' element = {<About />} />
+      </Routes> */}
+    {/* </BrowserRouter> */}
 
+    {/* 커스텀 훅이든 이미 존재하는 훅이든 jsx 안으로 가져올 수 없다.
+        ex) UseProduct.data */}
+    {/* <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Fakestore02 data={data} />} />
+          <Route path='/detail/:id' element={<FakestoreDetail02  data={data} />} />
+        </Routes>
+    </BrowserRouter> */}
+
+
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<RecipeList data={data} />} />
+        <Route path='/detail/:id' element={<RecipeDetail data={data} />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }

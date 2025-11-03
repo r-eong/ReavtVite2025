@@ -7,8 +7,12 @@ import App from './App.jsx'
 import Test12 from './components/test12.jsx'
 import Test13 from './components/test13.jsx'
 
+import { BrowserRouter } from 'react-router-dom'
+
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
+  // <BrowserRouter>
     <App />
+  // </BrowserRouter>
   // </StrictMode>,
 )

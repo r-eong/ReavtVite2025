@@ -29,6 +29,9 @@ export default function Exfatch(){
                 // res.ok 를 쓰면 true, false 가 나옴!
                 // 둘 다 써도 된다는 뜻!
                 throw new Error(`HTTP error status : ${res.status}`)
+                // throw new Error('HTTP error status : ', res.status)
+                // ┖> ( 인수1 , 인수2 ) 이 방식으로 작성할 경우 인수가 2개로 인식되어 
+                // 동작방식 때문에 문제가 생김. `빽틱`을 사용하던가 ,를 사용하지 않고 하나씩 작성하기
             }
             
             // JSON 파싱(해석)
@@ -38,6 +41,13 @@ export default function Exfatch(){
         .then((data) => {
             // 지금 불러온 데이터는 이 부분에만 존재
             console.log('가져온 데이터', data)
+            // console.log(`가져온 데이터 ${data}`)
+            // ┖> 이렇게 작성할 경우 콘솔에 [object], [object] ... 로 출력됨
+            // 배열 또는 객체{}는 문자열로 바꾸어 출력하려고 함.
+            // .toStrong() 자바스크립트가 가지고 있는 메서드 객체.
+            // Array 나 Object 의 기본 toString() 은 
+            // 사람이 알아볼 수 없는 형태 [object] 형태로 출력한다.
+            // 고로, 여기서는 ( 인수1 , 인수2 ) 형태로 작성하여 출력한다.
             setData(data)  // 상태를 저장
         })
 

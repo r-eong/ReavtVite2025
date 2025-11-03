@@ -1,42 +1,20 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import '../ExJ06/ProductApp.css'
+import '../Fake/ProductApp.css'
 
-export default function ExJ07(){
-    const [data, setData] = useState([])
+// 구조 분해 할당 : 일일히 변수로 대입해서 할당을 다시한다
+// 반드시 구조 분해 할당은 중괄호{data}로
+export default function Fakestore02({data}){
     const [loading, setLoading] = useState(true)
     // 카테고리별로 담을 변수
     const [all, setAll] = useState([])
     // rating 보이기/안보이기 
     const [rateshow,setRateShow] = useState(false)
 
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-        .then((res) => {
-            return res.json()
-        })
-        .then((data) => {
-            console.log('가져온 데이터', data)
-            setData(data)
-            setAll(data)
-        })
-        .finally(() => {
-            console.log('요청완료')
-            setLoading(false)
-        })
-    }, [])
-
     // 전체
     const showAll = () => {
         setData(all)
-    }
-    // 평점별 정렬
-    // sort((a,b) => a - b) : 오름차순 정렬
-    // sort((a,b) => b - a) : 내림차순 정렬
-    const dataCopy = [...data]
-    const rateTab = () => {
-        dataCopy.sort((a,b) => b.rating.rate - a.rating.rate)
-        console.log(rateTab)
     }
 
     // 카테고리 필터
@@ -63,7 +41,7 @@ export default function ExJ07(){
     return(
         <>
         <button type="button" onClick={showAll}>전체</button>
-        <button type="button" onClick={rateTab}>순위</button>
+        {/* <button type="button" onClick={rateTab}>순위</button> */}
         <br/>
         <br/>
         <span>카테고리 </span>
@@ -77,7 +55,9 @@ export default function ExJ07(){
                     <img 
                     src={data.image} 
                     alt={data.title} />
-                    <p>{(data.title).slice(0, 10)}</p>
+                    <Link to={`/detail/${data.id}`}>
+                    <p>{data.title}</p>
+                    </Link>
                     <p style={{color: '#777'}}>{data.category}</p>
                     <p>{data.price}$ / ★{data.rating.rate} / 후기 {data.rating.count}</p>
                 </li>

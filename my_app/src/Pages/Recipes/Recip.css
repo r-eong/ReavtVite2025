@@ -1,0 +1,55 @@
+#root button{
+    margin: 5px;
+}
+#root button:hover{
+    background-color: #5abd21;
+    border: 1px solid #5abd21;
+    color: #fff;
+}
+#root ul{
+    list-style: none;
+    padding: 0;
+    width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    gap: 25px;
+    margin-top: 20px;
+}
+#root ul li{
+    height: 390px;
+    width: 240px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+#root ul li:hover{
+    border: 1px solid #5abd21;
+    background-color: #eff5ed;
+}
+#root ul li img{
+    border-radius: 5px;
+}
+#root ul li p{
+    color: #333;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 5px 0;
+}
+#root .detail{
+    width: 1300px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+#root .detail h3{
+    margin: 5px 0;
+}
+#root .detail img{
+    width: 600px;
+    border-radius: 10px;
+}
+#root .detail p{
+    padding: 5px 0;
+}
