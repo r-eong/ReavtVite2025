@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+#root .Home{
+    /* border: 1px solid green; */
+    margin: 245px 0 350px 0;
+    width: 1060px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#root .Home > img{
+    width: 200%;
+}
+#root .recommended_products{
+    margin: 40px 0;
+}
+#root .Home h1{
+    text-align: center;
+    font-weight: normal;
+    color: #333;
+}
+
+#root .Home ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    margin: 20px 0;
+}
+#root .Home ul li{
+    width: 300px;
+    padding: 20px 0;
+    cursor: pointer;
+}
+#root .Home ul li img{
+    width: 300px;
+    margin-bottom: 10px;
+}
+#root .Home ul li .name{
+    font-size: 17px;
+    color: #000;
+}
+#root .Home ul li p{
+    font-size: 15px;
+    color: #444;
+}

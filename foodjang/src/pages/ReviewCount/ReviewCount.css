@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+#root .ReviewCount{
+    /* border: 1px solid green; */
+    margin: 300px 0 350px 0;
+    width: 1060px;
+}
+
+#root .ReviewCount > p{
+    color: #333;
+    padding: 20px 27px;
+    position: relative;
+}
+#root .ReviewCount > p::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+#root .ReviewCount .ReviewCount_all ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+#root .ReviewCount .ReviewCount_all ul li{
+    width: 300px;
+    padding: 20px 0;
+    cursor: pointer;
+}
+#root .ReviewCount .ReviewCount_all ul li img{
+    width: 300px;
+    margin-bottom: 10px;
+}
+#root .ReviewCount .ReviewCount_all ul li .name{
+    font-size: 17px;
+    color: #000;
+}
+#root .ReviewCount .ReviewCount_all ul li p{
+    font-size: 15px;
+    color: #444;
+}

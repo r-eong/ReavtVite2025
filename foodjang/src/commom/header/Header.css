@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+#root .head_container{
+    position: relative;
+}
+
+/* 헤더 전체 */
+#root .Header{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1060px;
+    /* margin: 0 auto; */
+}
+
+/* 지금 가입하고~ */
+#root .Header .top{
+    color: #fff;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+#root .Header .top .topBox{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    width: 100vw;
+    height: 45px;
+    background-color: #ee4143;
+    overflow-x: hidden;
+}
+
+/* 북마크 로그인 회원가입 ... */
+#root .Header .headerTop{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+#root .Header .headerTop span{
+    cursor: pointer;
+}
+#root .Header .headerTop span:hover{
+    color: #ee4143;
+}
+
+#root .Header .headerTop .topRight span{
+    margin-left: 20px;
+}
+#root .Header .headerTop .topRight .line{
+    position: relative;
+}
+#root .Header .headerTop .topRight .line::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -10px;
+    width: 1px;
+    height: 70%;
+    background-color: #ccc;
+    overflow-x: hidden;
+}
+
+/* 로고 검색창 */
+#root .Header .headerMid{
+    text-align: center;
+    margin: 25px 0;
+    position: relative;
+}
+#root .Header .headerMid img{
+    cursor: pointer;
+}
+#root .Header .headerMid .inputBox{
+    position: absolute;
+    right: 0;
+    bottom: 12px;
+    border-bottom: 1px solid #ee4143;
+    padding: 5px 10px;
+}
+#root .Header .headerMid .inputBox input{
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+#root .Header .headerMid .inputBox button{
+    border: none;
+    background-color: transparent;
+    height: 22px;
+    cursor: pointer;
+}
+
+/* 메뉴 */
+#root .Header .headerFoot{
+    position: relative;
+    padding-bottom: 18px;
+}
+#root .Header .headerFoot::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: #ccc;
+}
+#root .Header .headerFoot ul{
+    display: flex;
+    justify-content: space-around;
+}
+#root .Header .headerFoot ul li{
+    cursor: pointer;
+    color: #333;
+}
+#root .Header .headerFoot ul li img{
+    margin-right: 5px;
+}
+#root .Header .headerFoot ul li:hover{
+    color: #ee4143;
+}
+#root .Header .headerFoot ul li.line{
+    position: relative;
+}
+#root .Header .headerFoot ul li.line::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -55px;
+    width: 1px;
+    height: 70%;
+    background-color: #ccc;
+}

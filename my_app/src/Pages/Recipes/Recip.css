@@ -1,5 +1,6 @@
 #root button{
     margin: 5px;
+    background-color: transparent;
 }
 #root button:hover{
     background-color: #5abd21;

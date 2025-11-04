@@ -10,8 +10,6 @@ export default function RecipeList({data}){
     const [categoryshow, setCategoryshow] = useState(false)
     // 카테고리
     const [list, setList] = useState('American')
-    // 좋아요
-    const [likes, setLikes] = useState(0)
 
     // 카테고리 필터
     const tabFilter = data.filter((item) => item.cuisine === list)
@@ -54,13 +52,44 @@ export default function RecipeList({data}){
         setCategoryshowAll(false)
     }
 
-    const addLike = (id) => {
-        let likeCopy = [...likes]
-        likeCopy[id] += 1
-        setLikes(likeCopy)
-        console.log(addLike)
+    // 좋아요 버튼
+    // 좋아요 출력 방향
+    // like = {1: 0, 2: 0, 3: 0 ...}
+    // id 음식명 좋아요
+    //  1  피자    0
+    //  2 파스타   0
+    //  3 샐러드   0 ...
+
+    // 좋아요
+    // JSON 자체가 오브젝트 배열이기 때문에 아래와 같이 초기화 할 수 없다
+    // 이유 : 하나의 항목만 좋아요가 0이 되기 때문
+    // 오브젝트에 0을 초기화하는 초기값 변수
+    // 각자의 오브게트 안에 좋아요를 새로 그리는 것이기 땜누에 [배열]이 아닌 {오브젝트}로 써야함!
+    const defaultLikes = {}  // 이렇게 빈 배열을 만들어주게되면 
+    // undfind 가 될 확률이 높기 때문에 예외처리(if)를 해줘야함!
+    if(data.length > 0){
+        for(let i=0; i<data.length; i++){
+            const recip = data[i]
+            // defaultLikes[1] = 0
+            // {id : 1, .... 좋아요: 0}
+            defaultLikes[recip.id] = 0   // 각 레시피 id별로 초기값 0으로 셋팅
+        }
     }
+
+    // 꼭 for문 아래에 있어야함!
+    const [likes, setLikes] = useState(defaultLikes)
     
+    // 좋아요 버튼을 클릭하면 좋아요 1씩 증가하는 핸들러
+    const likesHandeler = (id) => {
+        // 배열이나 오브젝트는 힙의 어드레스 번지 주소가 같으면 
+        // 리렌더링을 하지 않기 때문에 반드시 얕은복사 필요
+        const likeCopy = {...likes}
+        // 현재 undefind 인 경우 -> undefind + 1 -> NaN 출력
+        // ┖> likeCopy[id] += 1
+        likeCopy[id] = (likeCopy[id] !== undefined ? likeCopy[id] : 0) + 1
+        setLikes(likeCopy)
+    }
+
     return(
         <>
         <div className="list_top">
@@ -90,7 +119,7 @@ export default function RecipeList({data}){
                             <p>요리 유형 - {data.cuisine}</p>
                             <p>★ {data.rating} / {data.reviewCount}</p>
                         </Link>
-                        <button type="button" onClick={addLike}>💚 0</button>
+                        <button type="button" onClick={() => likesHandeler(data.id)}>💚 {likes[data.id]}</button>
                     </li>
                 ))}
             </ul>

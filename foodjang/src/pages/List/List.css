@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+#root .List{
+    /* border: 1px solid green; */
+    margin: 300px 0 350px 0;
+    width: 1060px;
+    color: #333;
+}
+
+#root .List .cuisine{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 40px 0;
+    font-size: 15px;
+    position: relative;
+}
+#root .List .cuisine::before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+#root .List .cuisine p.line{
+    position: relative;
+    cursor: pointer;
+}
+#root .List .cuisine p:hover{
+    color: #ee4143;
+}
+#root .List .cuisine p.line::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -10px;
+    width: 1px;
+    height: 60%;
+    background-color: #ccc;
+}
+#root .List > p{
+    color: #333;
+    padding: 20px 27px;
+    position: relative;
+}
+#root .List > p::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+#root .List .list_all ul{
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 60px;
+}
+#root .List .list_all ul li{
+    width: 300px;
+    /* padding: 20px; */
+    cursor: pointer;
+}
+#root .List .list_all ul li img{
+    width: 300px;
+    margin-bottom: 10px;
+}
+#root .List .list_all ul li .name{
+    font-size: 17px;
+    color: #000;
+}
+#root .List .list_all ul li p{
+    font-size: 15px;
+    color: #444;
+}
