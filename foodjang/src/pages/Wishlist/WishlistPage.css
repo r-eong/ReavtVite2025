@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+#root .WishlistPage{
+    margin: 300px 0 350px 0;
+    width: 1060px;
+    /* height: 100vh; */
+    min-height: 300px;
+    color: #333;
+    padding: 0 63px;
+}
+
+/* 찜한 상품 목록 */
+/* #root .WishlistPage h2{
+    margin-left: 20px;
+} */
+
+/* 상품 없을 때 */
+#root .WishlistPage > p{
+    margin: 100px 0;
+    text-align: center;
+}
+
+#root .WishlistPage ul li{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    /* position: relative; */
+}
+#root .WishlistPage ul li img{
+    width: 100px;
+}
+/* #root .WishlistPage ul li div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+} */
+#root .WishlistPage ul li p{
+    padding: 0 0 0 30px;
+}
+
+#root .WishlistPage ul li button{
+    margin-right: 30px;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    font-weight: 300;
+    cursor: pointer;
+}

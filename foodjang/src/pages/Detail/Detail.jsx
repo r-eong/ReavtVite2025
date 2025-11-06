@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { WishlistContext } from "../Wishlist/WishlistContext";
 
 import '../Detail/Detail.css'
 
@@ -9,6 +11,8 @@ export default function Detail({data}){
 
     const item = data.find((data) => data.id === Number(id))
 
+    const {addWishlist, removeWishlist, isWishList} = useContext(WishlistContext)
+    console.log(item)
     return(
         <div className="Detail">
             <h2>레시피 상세</h2>
@@ -27,6 +31,12 @@ export default function Detail({data}){
                         <p>{item.ingredients}</p>
                         <h3>조리 방법</h3>
                         <p>{item.instructions}</p>
+                    </div>
+                    {/* 위시리스트 버튼 */}
+                    <div className="wishlist">
+                        <button type="button"
+                        onClick={() => isWishList(item.id) ? removeWishlist(item.id) : addWishlist(item)}
+                        >{isWishList(item.id) ? '♥' : '♡'}</button>
                     </div>
                 </div>
             </div>

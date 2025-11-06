@@ -39,6 +39,7 @@
     width: 300px;
     padding: 20px 0;
     cursor: pointer;
+    position: relative;
 }
 #root .Difficulty .Difficulty_all ul li img{
     width: 300px;
@@ -51,4 +52,18 @@
 #root .Difficulty .Difficulty_all ul li p{
     font-size: 15px;
     color: #444;
+}
+#root .Difficulty .Difficulty_all ul li button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ee4143;
+    background-color: #ffffff8c;
+    color: #ee4143;
+    font-size: 17px;
+    font-weight: 900;
+    position: absolute;
+    top: 275px;
+    right: 15px;
+    cursor: pointer;
 }

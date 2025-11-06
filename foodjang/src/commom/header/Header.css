@@ -21,7 +21,7 @@
 }
 
 /* 지금 가입하고~ */
-#root .Header .top{
+#root .Header .top p{
     color: #fff;
     text-align: center;
     position: relative;
@@ -51,6 +51,7 @@
 
 #root .Header .headerTop span{
     cursor: pointer;
+    color: #333;
 }
 #root .Header .headerTop span:hover{
     color: #ee4143;

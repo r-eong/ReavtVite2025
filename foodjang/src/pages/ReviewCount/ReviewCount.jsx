@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { WishlistContext } from "../Wishlist/WishlistContext";
 
 import '../ReviewCount/ReviewCount.css'
 
 export default function ReviewCount({data}){
     const reviewCountTab = data.sort((a,b) => b.reviewCount - a.reviewCount)
+    const {addWishlist, removeWishlist, isWishList} = useContext(WishlistContext)
 
     return(
         <>
@@ -20,6 +23,9 @@ export default function ReviewCount({data}){
                                 <p>{item.cuisine}</p>
                                 <p>★ {item.rating} / 후기 {item.reviewCount}</p>
                             </Link>
+                            <button type="button"
+                            onClick={() => isWishList(item.id) ? removeWishlist(item.id) : addWishlist(item)}
+                            >{isWishList(item.id) ? '♥' : '♡'}</button>
                         </li>
                     ))}
                 </ul>

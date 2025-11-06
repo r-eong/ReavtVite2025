@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { WishlistContext } from "../../pages/Wishlist/WishlistContext";
 
 import '../header/Header.css'
 
 export default function Header(){
+    const {wishlist, addWishlist, removeWishlist, isWishList} = useContext(WishlistContext)
     return(
         <>
         <div className="head_container">
             <div className="Header">
                 {/* 가입광고 */}
                 <div className="top">
-                    <p>지금 가입하고 <strong>인기상품 혜택가</strong>로 받아가세요!</p>
+                    <Link to='/Login'><p>지금 가입하고 <strong>인기상품 혜택가</strong>로 받아가세요!</p></Link>
                     {/* 배경 빨간박스 */}
                     <div className="topBox"></div>
                 </div>
@@ -18,12 +21,12 @@ export default function Header(){
                 <div className="headerTop">
                     {/* 북마크 */}
                     <div className="topLeft">
-                        <span>+BOOKMARK</span>
+                        <Link to='/WishlistPage'><span>찜목록 {wishlist.length === 0 ? '♡' : '♥'}+{wishlist.length}</span></Link>
                     </div>
 
                     {/* 로그인 회원가입 고객센터 장바구니 */}
                     <div className="topRight">
-                        <span className="line">로그인</span>
+                        <Link to='/Login'><span className="line">로그인</span></Link>
                         <span className="line">회원가입</span>
                         <span className="line">고객센터</span>
                         <span><img src="top_basket2.gif" alt="장바구니" /> / 0</span>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { WishlistContext } from "../Wishlist/WishlistContext";
 
 import '../List/List.css'
 // import Detail from "../Detail/Detail";
@@ -19,12 +21,14 @@ export default function List({data}){
         setCategoryshowAll(false)
     }
 
+    const {addWishlist, removeWishlist, isWishList} = useContext(WishlistContext)
+
     return(
         <>
         <div className="List">
             <p>상품 {data.length}개</p>
             <div className="cuisine">
-                <p className="line" onClick={() => setCategoryshowAll(false)}>전체</p>
+                <p className="line" onClick={() => setCategoryshowAll(true)}>전체</p>
                 <p className="line" onClick={() => filterList('American')}>American</p>
                 <p className="line" onClick={() => filterList('Asian')}>Asian</p>
                 <p className="line" onClick={() => filterList('Greek')}>Greek</p>
@@ -49,6 +53,9 @@ export default function List({data}){
                                 <p>{item.cuisine}</p>
                                 <p>★ {item.rating} / 후기 {item.reviewCount}</p>
                             </Link>
+                            <button type="button"
+                            onClick={() => isWishList(item.id) ? removeWishlist(item.id) : addWishlist(item)}
+                            >{isWishList(item.id) ? '♥' : '♡'}</button>
                         </li>
                     ))}
                 </ul>

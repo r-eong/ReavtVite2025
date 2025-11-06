@@ -15,9 +15,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* overflow-x: hidden; */
 }
 #root .Home > img{
-    width: 200%;
+    /* width: 100%; */
 }
 #root .recommended_products{
     margin: 40px 0;
