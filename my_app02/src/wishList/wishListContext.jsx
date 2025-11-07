@@ -3,6 +3,7 @@
 import { createContext } from "react";
 // 상태변수를 사용 useState 를 import 한다
 import { useState } from "react";
+import { useEffect } from "react";
 
 // Context 생성 : wishlistContext
 // Context 생성한 후 내보내야함. 반드시 export
@@ -14,7 +15,32 @@ export const wishlistContext = createContext()
 export default function WishListProvider({children}){
     // 찜한 항목을 저장할 상태변수를 정의
     // 초기값은 빈배열
-    const [wishList, setWishList] = useState([])
+    // 방법1
+    // const [wishList, setWishList] = useState([])
+    const [wishList, setWishList] = useState(() => {
+        const saved = localStorage.getItem('wishList')
+        // 저장된 찜 목록이 있으면 복원, 없으면 빈 배열
+        return saved ? JSON.parse(saved) : []
+    })
+
+    // 1. LocalStorage 에서 최초 랜더링시 한 번만 불러오기
+    // ┖> useEffect 이용해서 작성
+    // 방법1
+    // useEffect(() => {
+    //     const saved = localStorage.getItem('wishList')
+    // useEffect 에서 return 방식은 cleanup 함수 작성 방법이기 
+    // 때문에 잘못 작성하면 삭제된다. 그래서 if문 사용
+    //     if(saved){
+    //         setWishList(JSON.parse(saved))  // 상태를 갱신
+    //     }
+    // }, [])
+
+
+    // 2. wishList 가 바뀔 때 마다 LocalStorage 에 저장되어야함
+    useEffect(() => {
+        localStorage.setItem('wishList', JSON.stringify(wishList))
+    }, [wishList])
+
     
     // 찜한 상품을 추가하는 함수
     // 이미 같은 id를 가진 상품이 존재하면 중복항목을 추가하면 안됨
@@ -35,13 +61,19 @@ export default function WishListProvider({children}){
             setWishList(wishCopy)
         }
     }
-
+    
     // 찜 해제/삭제
     // filter() 이용해서 id 가 다른 항목만 남겨서 업데이트 하는 기능 사용
     const removeFromWishList = (id) => {
         setWishList(wishList.filter((item) => item.id !== id))
     }
     // ┖> 이건 실제로 삭제한 게 아니라 ui상 없애기만 한 것임!
+
+    // 전체삭제
+    const clearItem = () => {
+        setWishList([])
+        localStorage.removeItem('wishList')
+    }
 
     // 이미 찜된 항목 확인을 위해 생성하는 함수
     // 해당 id 의 상품 객체가 존재하면 true, 없으면 false 반환
@@ -59,7 +91,7 @@ export default function WishListProvider({children}){
     }
     // provider(공급) 생성
     return(
-        <wishlistContext.Provider value={{wishList, addToWishList, removeFromWishList, isWishList}}>
+        <wishlistContext.Provider value={{wishList, addToWishList, removeFromWishList, isWishList, clearItem}}>
             {/* childern 이란? 
             wishListContext 의 하위 컴포넌트 모두를 의미 */}
             {children}

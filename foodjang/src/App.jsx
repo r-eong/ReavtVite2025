@@ -14,6 +14,8 @@ import Detail from './pages/Detail/Detail'
 import Login from './pages/Login/Login'
 import WishlistProvider from './pages/Wishlist/WishlistContext'
 import WishlistPage from './pages/Wishlist/WishlistPage'
+import AuthProvider from './pages/Login/AuthContext'
+import Join from './pages/Join/Join'
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
@@ -24,25 +26,24 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-
-        <WishlistProvider>
-          <Header />
-
-          <Routes>
-            <Route path='/' element={<Home data={data} />} />
-            <Route path='/List' element={<List data={data} />} />
-            <Route path='/Difficulty' element={<Difficulty data={data} />} />
-            <Route path='/ReviewCount' element={<ReviewCount data={data} />} />
-            <Route path='/Detail/:id' element={<Detail data={data} />} />
-            <Route path='/Login' element={<Login />} />
-            <Route path='/WishlistPage' element={<WishlistPage />} />
-          </Routes>
-
-          <Footer />
-        </WishlistProvider>
-
-      </BrowserRouter>
+        <BrowserRouter>
+          <WishlistProvider>
+            <AuthProvider>
+              <Header />
+              <Routes>
+                <Route path='/' element={<Home data={data} />} />
+                <Route path='/List' element={<List data={data} />} />
+                <Route path='/Difficulty' element={<Difficulty data={data} />} />
+                <Route path='/ReviewCount' element={<ReviewCount data={data} />} />
+                <Route path='/Detail/:id' element={<Detail data={data} />} />
+                <Route path='/Login' element={<Login />} />
+                <Route path='/WishlistPage' element={<WishlistPage />} />
+                <Route path='/Join' element={<Join />}/>
+              </Routes>
+              <Footer />
+            </AuthProvider>
+          </WishlistProvider>
+        </BrowserRouter>
     </>
   )
 }

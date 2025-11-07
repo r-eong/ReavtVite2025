@@ -11,7 +11,7 @@
     margin: 300px 0 350px 0;
     width: 1060px;
     /* height: 100vh; */
-    min-height: 300px;
+    min-height: 310px;
     color: #333;
     padding: 0 63px;
 }
@@ -53,4 +53,15 @@
     background-color: transparent;
     font-weight: 300;
     cursor: pointer;
+}
+
+#root .WishlistPage ul > button{
+    margin-top: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#root .WishlistPage ul > button:hover{
+    color: #ee4143;
+    border-bottom: 1px solid #ee4143;
 }

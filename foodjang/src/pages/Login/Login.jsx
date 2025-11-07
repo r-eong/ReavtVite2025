@@ -1,10 +1,29 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import {useNavigate} from 'react-router-dom';
+import { AuthContext } from "../Login/AuthContext";
 
 import '../Login/Login.css'
 
 export default function Login(){
+    const [id, setId] = useState('')
+    const [pw, setPw] = useState('')
+
+    const {login} = useContext(AuthContext)
+  
+    const navigate = useNavigate()
+
+    const onChangeHandeler = () => {
+        if(id === 'admin' && pw === '1234'){
+            login(id)
+            navigate('/')
+        }else{
+            alert('아이디, 비밀번호를 확인하세요')
+        }
+    }
+
     return(
         <div className="Login">
             <h1>로그인</h1>
@@ -13,10 +32,10 @@ export default function Login(){
                 <h3>회원 로그인</h3>
                 <div className="login_form">
                     <div className="formInput">
-                        <input type="text" placeholder="아이디" />
-                        <input type="text" placeholder="비밀번호" />
+                        <input type="text" onChange={(e) => setId(e.target.value)} placeholder="아이디" />
+                        <input type="text" onChange={(e) => setPw(e.target.value)} placeholder="비밀번호" />
                     </div>
-                    <button type="button">로그인</button>
+                    <button type="button" onClick={onChangeHandeler}>로그인</button>
                 </div>
                 <div className="remember_id">
                     <input type="checkbox" id="checkBox"/>

@@ -2,11 +2,24 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { WishlistContext } from "../../pages/Wishlist/WishlistContext";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../pages/Login/AuthContext";
 
 import '../header/Header.css'
 
 export default function Header(){
     const {wishlist, addWishlist, removeWishlist, isWishList} = useContext(WishlistContext)
+
+    const {user, logout} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    // console.log('현재 로그아웃 뭐야', logout)
+    // console.log('현재 user', user)
+    const LogoutHandeler = () => {
+        logout()
+        navigate('/Login')
+    }
+
     return(
         <>
         <div className="head_container">
@@ -26,8 +39,9 @@ export default function Header(){
 
                     {/* 로그인 회원가입 고객센터 장바구니 */}
                     <div className="topRight">
-                        <Link to='/Login'><span className="line">로그인</span></Link>
-                        <span className="line">회원가입</span>
+                        {!user ? (<Link to='/Login'><span className="line">로그인</span></Link>) : 
+                        (<Link to='/'><span className="line" onClick={LogoutHandeler}>{user}님 로그아웃</span></Link>)}
+                        <Link to='/Join'><span className="line">회원가입</span></Link>
                         <span className="line">고객센터</span>
                         <span><img src="top_basket2.gif" alt="장바구니" /> / 0</span>
                     </div>

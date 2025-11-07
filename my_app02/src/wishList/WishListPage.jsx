@@ -4,7 +4,7 @@ import { wishlistContext } from "./wishListContext";
 // 찜한 목록 출력
 export default function WishListPage(){
     // 공유 데이터 가져오기
-    const {wishList, removeFromWishList} = useContext(wishlistContext)
+    const {wishList, removeFromWishList, clearItem} = useContext(wishlistContext)
 
     return(
         <div style={{padding: '20px'}}>
@@ -18,8 +18,10 @@ export default function WishListPage(){
                             <button type="button" style={{color: 'red'}} onClick={() => removeFromWishList(item.id)}>X</button>
                         </li>
                     ))}
-                </ul>)
+                </ul>
+                )
             }
+            <button type="button" onClick={clearItem}>전체삭제</button>
         </div>
     )
 }

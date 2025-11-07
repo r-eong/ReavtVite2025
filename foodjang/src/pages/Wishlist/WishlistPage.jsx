@@ -6,7 +6,7 @@ import { WishlistContext} from "./WishlistContext";
 import '../Wishlist/WishlistPage.css'
 
 export default function WishlistPage(){
-    const {wishlist, removeWishlist} = useContext(WishlistContext)
+    const {wishlist, removeWishlist, cleanItem} = useContext(WishlistContext)
    
     console.log(wishlist)
     return(
@@ -14,6 +14,7 @@ export default function WishlistPage(){
             <h2>찜한 상품 목록</h2>
             {wishlist.length === 0 ? <p>찜한 상품이 없습니다.</p> : (
                 <ul>
+                    <button type="button" onClick={cleanItem}>전체삭제</button>
                     {wishlist.map((item) => (
                         <li key={item.id}>
                             <button type="button" onClick={() => removeWishlist(item.id)}>X</button>
@@ -24,7 +25,8 @@ export default function WishlistPage(){
                             </div>
                         </li>
                     ))}
-                </ul>)
+                </ul>
+                )
             }
         </div>
     ) 
