@@ -1,0 +1,56 @@
+.CartPage{
+    margin: 100px 0 200px 0;
+    padding: 0;
+    min-height: 589px;
+    width: 1190px;
+}
+.CartPage > h4{
+    text-align: right;
+    cursor: pointer;
+}
+.CartPage > h4:hover{
+    text-decoration: underline;
+}
+
+.CartPage ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.CartPage ul li{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    width: 1190px;
+    text-align: left;
+}
+.CartPage ul li img{
+    width: 150px;
+    height: 150px;
+}
+.CartPage ul li > p{
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    /* transform: translateY(-50%); */
+    right: 0;
+}
+.CartPage ul li div > div{
+    display: flex;
+    gap: 20px;
+}
+.CartPage ul li div > div button{
+    background-color: transparent;
+    font-size: 25px;
+    padding: 0;
+}
+
+.CartPage > h2{
+    text-align: left;
+    margin-left: 30px;
+}

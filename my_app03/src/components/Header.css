@@ -1,0 +1,27 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background-color: #ce4a4a;
+    color: #fff;
+    z-index: 100;
+}
+.Header h3,
+.Header h4{
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+}
+.Header div{
+    display: flex;
+    gap: 20px;
+}
+.Header div h4{
+    text-decoration: none;
+    color: #fff;
+}

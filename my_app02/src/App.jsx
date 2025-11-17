@@ -14,6 +14,8 @@ import HomePage from './LoginExample/Pages/HomePage'
 
 import Join from './Addr/join'
 
+import ExJ02 from './test'
+
 function App() {
   // ProductList, WishListPage 를 선택하도록 하기 위한 상태변수
   const [showList, setShowList] = useState(false)
@@ -44,7 +46,8 @@ function App() {
           </BrowserRouter>
         </AuthProvider> */}
         
-    <Join />
+    {/* <Join /> */}
+    <ExJ02 />
     </>
   )
 }
