@@ -1,0 +1,32 @@
+*{
+    margin: 0 auto;
+    width: 400px;
+}
+h1{
+    color: #6cc252;
+    margin-bottom: 40px;
+}
+h4{
+    font-weight: normal;
+    text-align: left;
+}
+form{
+    border: 1px solid #ccc;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.IdPw{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.IdPw input{
+    padding: 15px 0;
+}
+.check{
+    display: flex;
+    width: 170px;
+}

@@ -14,18 +14,22 @@ import Footer from './components/Footer'
 import Section from './Pages/Section'
 import CartPage from './Pages/CartPage'
 
+import LoginCookie from './Cookie/LoginCookie'
+
 function App() {
 
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Header />
         <Routes>
           <Route path='/' element={<Section />} />
           <Route path='/Cart' element={<CartPage />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+      <LoginCookie />
     </>
   )
 }
