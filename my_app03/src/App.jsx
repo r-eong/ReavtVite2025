@@ -16,6 +16,8 @@ import CartPage from './Pages/CartPage'
 
 import LoginCookie from './Cookie/LoginCookie'
 
+import CookieModal from './Cookie/CookieModal'
+
 function App() {
 
   return (
@@ -29,7 +31,8 @@ function App() {
         <Footer />
       </BrowserRouter> */}
 
-      <LoginCookie />
+      {/* <LoginCookie /> */}
+      <CookieModal />
     </>
   )
 }

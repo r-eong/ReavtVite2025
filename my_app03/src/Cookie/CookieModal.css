@@ -1,0 +1,30 @@
+.box{
+    width: 500px;
+    padding: 0;
+    margin: 0;
+}
+.img{
+    width: 500px;
+    height: 500px;
+    background-color: #7a33d8;
+}
+.check{
+    /* display: flex; */
+    /* height: 20px; */
+    width: 200px;
+    margin-top: 10px;
+    text-align: left;
+}
+.check input{
+    width: 20px;
+    margin-right: 10px;
+}
+.check label{
+    width: 140px;
+    margin: 0;
+}
+button{
+    background-color: #7a33d8;
+    color: #fff;
+    cursor: pointer;
+}
