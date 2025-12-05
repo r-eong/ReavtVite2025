@@ -18,6 +18,10 @@ import LoginCookie from './Cookie/LoginCookie'
 
 import CookieModal from './Cookie/CookieModal'
 
+import GoogleCalendar from './calenderTest/calender'
+import MyCalendar from './calenderTest/calender'
+import MyFullCalendar from './calenderTest/full'
+
 function App() {
 
   return (
@@ -32,7 +36,10 @@ function App() {
       </BrowserRouter> */}
 
       {/* <LoginCookie /> */}
-      <CookieModal />
+      {/* <CookieModal /> */}
+      {/* <GoogleCalendar /> */}
+      {/* <MyCalendar /> */}
+      <MyFullCalendar />
     </>
   )
 }

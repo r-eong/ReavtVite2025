@@ -1,0 +1,67 @@
+/* 전체 캘린더 영역 스타일 */
+.fc {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 상단 네비게이션(이전 / 다음 / 오늘 버튼 포함) */
+.fc-toolbar-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* 버튼 기본 */
+.fc .fc-button {
+  background-color: #3b82f6;
+  border: none;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+.fc .fc-button:hover {
+  background-color: #2563eb;
+}
+
+/* 요일 헤더 영역 */
+.fc-col-header-cell {
+  background-color: #f4f4f4;
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 날짜 셀 */
+.fc-daygrid-day {
+  border: 1px solid #eee;
+  height: 110px;
+  vertical-align: top;
+}
+
+/* 날짜 숫자 */
+.fc-daygrid-day-number {
+  padding: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 오늘 날짜 하이라이트 */
+.fc-day-today {
+  background-color: #e0f2fe !important;
+}
+
+/* 이벤트 스타일 */
+.fc-daygrid-event {
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 4px;
+  font-size: 13px;
+  padding: 2px 4px;
+  margin: 2px 0;
+}
+
+.fc-daygrid-event:hover {
+  background-color: #2563eb;
+}
