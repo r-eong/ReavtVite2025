@@ -1,0 +1,89 @@
+/* 전체 화면 */
+.reservation_wrapper {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* 달력 카드 UI */
+.calendar_container {
+  width: 70%;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* 예약 패널 */
+.reservation_panel {
+  width: 30%;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 예약 목록 */
+.event_item {
+  background: #f5f8ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* 예약 확정 버튼 */
+.confirm_btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.confirm_btn:hover {
+  background: #0068d9;
+}
+
+/* 로그인 버튼 */
+.login_btn {
+  width: 100%;
+  padding: 12px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.login_btn:hover {
+  background: #3f9142;
+}
+
+/* FullCalendar 제목 스타일 개선 */
+.fc-toolbar-title {
+  font-size: 22px !important;
+  font-weight: 600;
+}
+
+/* 달력 셀 더 예쁘게 */
+.fc-daygrid-day {
+  cursor: pointer;
+}
+
+.fc-daygrid-day:hover {
+  background-color: #f7faff;
+}
+
+.fc-event {
+  border-radius: 8px !important;
+  padding: 3px 6px !important;
+  font-size: 12px;
+}

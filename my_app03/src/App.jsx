@@ -22,6 +22,8 @@ import GoogleCalendar from './calenderTest/calender'
 import MyCalendar from './calenderTest/calender'
 import MyFullCalendar from './calenderTest/full'
 
+import ReservationCalendar from './calenderTest/ReservationCalendar'
+
 function App() {
 
   return (
@@ -39,7 +41,8 @@ function App() {
       {/* <CookieModal /> */}
       {/* <GoogleCalendar /> */}
       {/* <MyCalendar /> */}
-      <MyFullCalendar />
+      {/* <MyFullCalendar /> */}
+      <ReservationCalendar />
     </>
   )
 }
